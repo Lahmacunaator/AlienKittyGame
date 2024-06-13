@@ -5,6 +5,11 @@ public class GameManager : MonoBehaviour
     // Private backing field for the singleton instance
     private static GameManager _instance;
 
+    // Prefab reference for AudioManager
+    public GameObject audioManagerPrefab;
+    [HideInInspector]
+    public AudioManager audioManager = null;
+    
     // Public static property to access the singleton instance
     public static GameManager Instance
     {
@@ -40,6 +45,13 @@ public class GameManager : MonoBehaviour
 
         // Set this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+        
+        // Instantiate the AudioManager if it doesn't already exist
+        if (audioManager == null && audioManagerPrefab != null)
+        {
+            var instantiatedObject = Instantiate(audioManagerPrefab);
+            audioManager = instantiatedObject.GetComponent<AudioManager>();
+        }
     }
 
     // Other game manager methods can go here
