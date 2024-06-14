@@ -685,7 +685,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1714355220}
   - component: {fileID: 1714355219}
-  m_Layer: 0
+  - component: {fileID: 1714355221}
+  m_Layer: 7
   m_Name: Global Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,12 +719,25 @@ Transform:
   m_GameObject: {fileID: 1714355218}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52.80952, y: 9.129668, z: 0.6678613}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1714355221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714355218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916001ddcd6a7be47aa3aed0b986718a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 1714355219}
 --- !u!1 &1743508972
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +784,7 @@ GameObject:
   - component: {fileID: 1879992289}
   - component: {fileID: 1879992290}
   m_Layer: 0
-  m_Name: Pixel Perfect Camera
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +953,7 @@ MonoBehaviour:
   volumeTrigger: {fileID: 1879992288}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 128
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
   antialiasingMode: 0

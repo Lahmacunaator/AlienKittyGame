@@ -11,10 +11,10 @@ public class Colorinator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        volume = GetComponent<Volume>();
-        var isFound = volume.TryGetComponent(out ColorGrading colorAdjustments);
+        //volume = GetComponent<Volume>();
+        var isFound = volume.profile.TryGet(out ColorAdjustments colorAdjustments);
 
-        colorAdjustments.saturation = new FloatParameter{value = 0};
+        colorAdjustments.saturation.value = -100f;
     }
 
     // Update is called once per frame
