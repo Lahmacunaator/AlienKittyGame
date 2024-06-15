@@ -1,26 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 public class Colorinator : MonoBehaviour
 {
-    public Volume volume;
-    public GameObject player;
+    private Volume volume;
 
-    private HealthManager healthManager;
-    
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        healthManager = player.GetComponent<HealthManager>();
+        volume = GetComponent<Volume>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AdjustSaturation(float value)
     {
         if (volume.profile.TryGet(out ColorAdjustments colorAdjustments))
         {
-            colorAdjustments.saturation.value = healthManager.health - 100f;
+            colorAdjustments.saturation.value = value;
         }
     }
 }

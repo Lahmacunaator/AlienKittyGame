@@ -9,7 +9,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Transform target;
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         var targetPos = target.position + offset;
         transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, smoothTime);

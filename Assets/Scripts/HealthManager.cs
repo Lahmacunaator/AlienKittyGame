@@ -13,14 +13,9 @@ public class HealthManager : MonoBehaviour
     
     private bool isHealing = false;
     private bool isTakingDamage = false;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public Colorinator colorinator;
     
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!isDead) HandleHealth();
     }
@@ -44,11 +39,13 @@ public class HealthManager : MonoBehaviour
     private void Heal()
     {
         health = health + heal > 100 ? 100 : health + heal;
+        ApplyEffect();
     }
     
     private void TakeDamage()
     {
         health = health - damage < 0 ? 0 : health - damage;
+        ApplyEffect();
     }
     
     private void HealOverTime(int seconds)
@@ -60,17 +57,15 @@ public class HealthManager : MonoBehaviour
     private IEnumerator HealOverTimeCoroutine(int seconds)
     {
         isHealing = true;
-        Debug.Log("Started Healing...");
 
         for (var i = 0; i < seconds; i++)
         {
-            Debug.Log("Healing... " + i + "s");
             health = health + healPerSecond > 100 ? 100 : health + healPerSecond;
+            ApplyEffect();
             yield return new WaitForSeconds(1);
         }
 
         isHealing = false;
-        Debug.Log("Healing Finished!");
     }
     
     private void TakeDamageOverTime(int seconds)
@@ -82,16 +77,19 @@ public class HealthManager : MonoBehaviour
     private IEnumerator TakeDamageOverTimeCoroutine(int seconds)
     {
         isTakingDamage = true;
-        Debug.Log("Started Taking Damage...");
 
         for (var i = 0; i < seconds; i++)
         {
-            Debug.Log("Taking Damage... " + i + "s");
             health = health - damagePerSecond < 0 ? 0 : health - damagePerSecond;
+            ApplyEffect();
             yield return new WaitForSeconds(1);
         }
 
         isTakingDamage = false;
-        Debug.Log("Taking Damage Finished!");
+    }
+
+    private void ApplyEffect()
+    {
+        colorinator.AdjustSaturation(health - 100f);
     }
 }
