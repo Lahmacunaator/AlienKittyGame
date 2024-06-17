@@ -8,9 +8,11 @@ public class PlayerMover : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     public float crouchHeight = 0.5f;
+    private PlayerAnimator animator;
 
     private Rigidbody2D rb;
     private Collider2D col;
+    private SpriteRenderer sr;
     private bool isGrounded;
     private bool isCrouching;
     private bool jumpRequest;
@@ -19,9 +21,12 @@ public class PlayerMover : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<PlayerAnimator>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         col = GetComponent<Collider2D>();
         originalHeight = col.bounds.size.y;
+        
     }
 
     private void Update()
@@ -40,9 +45,16 @@ public class PlayerMover : MonoBehaviour
 
     private void HandleMovement()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        Vector2 moveVelocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        
+        var moveInput = Input.GetAxis("Horizontal");
+
+        animator.UpdateState(Mathf.Abs(moveInput) <= 0.1f ? PlayerState.Idle : PlayerState.Walking);
+
+        sr.flipX = moveInput < 0;
+
+        var moveVelocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
         rb.velocity = new Vector2(moveVelocity.x, rb.velocity.y);  // Maintain the vertical velocity
+        
     }
 
     private void HandleJump()
@@ -57,6 +69,7 @@ public class PlayerMover : MonoBehaviour
     {
         if (jumpRequest)
         {
+            animator.UpdateState(PlayerState.Jumping);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpRequest = false;
         }

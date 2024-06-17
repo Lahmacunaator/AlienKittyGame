@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c37c328ac8113104982d5da95405ffa8
+guid: ef9d6fee466363d41a397f0c25ed36e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_0
+      name: girl-spin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 62
-        height: 70
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2585660c794ae52468e1d79eec568cba
-      internalID: 1092203869
+      spriteID: 6e155735135a0f541806494039d8daae
+      internalID: 1771942009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_1
+      name: girl-spin_1
       rect:
         serializedVersion: 2
-        x: 62
+        x: 35
         y: 0
-        width: 62
-        height: 70
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11cd923dffe63834c94428e12b51dedc
-      internalID: 601885148
+      spriteID: dd993c2723b29af4e99f7968df2c0fb7
+      internalID: 567444128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_2
+      name: girl-spin_2
       rect:
         serializedVersion: 2
-        x: 124
+        x: 70
         y: 0
-        width: 62
-        height: 70
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3384c1c1591e3844a64d7a8f8bf44c1
-      internalID: 1848645267
+      spriteID: cf95e2aca651adb488d4941c77ab269e
+      internalID: -2115855143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_3
+      name: girl-spin_3
       rect:
         serializedVersion: 2
-        x: 186
+        x: 105
         y: 0
-        width: 62
-        height: 70
+        width: 35
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,71 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e1c4a853550198408af66215e8ee476
-      internalID: 579746087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_4
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 566cb59ca50470d47a8c40225b44294e
-      internalID: -85521907
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_5
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58d682957dcaa234b8519695b8477eb2
-      internalID: 1786273306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-Shoot-L - Copy_6
-      rect:
-        serializedVersion: 2
-        x: 372
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52bfe437ea40bfe4b9c60bc708dec5f9
-      internalID: -96062152
+      spriteID: ded2ad655fd2cb0448ac5f87ca824fb5
+      internalID: -800539260
       vertices: []
       indices: 
       edges: []
@@ -267,13 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Soilder-Shoot-L - Copy_0: 1092203869
-      Soilder-Shoot-L - Copy_1: 601885148
-      Soilder-Shoot-L - Copy_2: 1848645267
-      Soilder-Shoot-L - Copy_3: 579746087
-      Soilder-Shoot-L - Copy_4: -85521907
-      Soilder-Shoot-L - Copy_5: 1786273306
-      Soilder-Shoot-L - Copy_6: -96062152
+      girl-spin_0: 1771942009
+      girl-spin_1: 567444128
+      girl-spin_2: -2115855143
+      girl-spin_3: -800539260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

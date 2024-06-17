@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc302fb51dfe832438cc6d71ba74c963
+guid: 57e41d9b90df897468e703cec993796d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,91 +108,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Soilder-idel-L - Copy_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bf27ead9e6e01a4daa847696b196dd4
-      internalID: -737314997
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-idel-L - Copy_1
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7988b453175435d438336eeb574b0a1e
-      internalID: 951840552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-idel-L - Copy_2
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a496a75e062093c48a6565326c693c7c
-      internalID: 1271272108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soilder-idel-L - Copy_3
-      rect:
-        serializedVersion: 2
-        x: 186
-        y: 0
-        width: 62
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e5609ed95761044eaf8f5851fe38675
-      internalID: 1804020798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -203,11 +119,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Soilder-idel-L - Copy_0: -737314997
-      Soilder-idel-L - Copy_1: 951840552
-      Soilder-idel-L - Copy_2: 1271272108
-      Soilder-idel-L - Copy_3: 1804020798
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
