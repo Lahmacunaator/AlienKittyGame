@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
+        SceneManager.sceneLoaded += CreateAudioManagerEvent;
         // Check if instance already exists and destroy this one if it does
         if (_instance != null && _instance != this)
         {
@@ -46,12 +48,21 @@ public class GameManager : MonoBehaviour
         // Set this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
         
+        CreateAudioManager();
+    }
+    
+    public void CreateAudioManagerEvent(Scene arg0, LoadSceneMode arg1)
+    {
+        CreateAudioManager();
+    }
+
+    private void CreateAudioManager()
+    {
         // Instantiate the AudioManager if it doesn't already exist
-        if (audioManager == null && audioManagerPrefab != null)
-        {
-            var instantiatedObject = Instantiate(audioManagerPrefab);
-            audioManager = instantiatedObject.GetComponent<AudioManager>();
-        }
+        if (audioManager != null || audioManagerPrefab == null) return;
+        
+        var instantiatedObject = Instantiate(audioManagerPrefab);
+        audioManager = instantiatedObject.GetComponent<AudioManager>();
     }
 
     // Other game manager methods can go here
