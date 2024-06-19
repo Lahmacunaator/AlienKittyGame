@@ -1,0 +1,25 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/MainMenuUSS.uss?fileID=7433441132597879392&amp;guid=8bd1a74da4524e043b9523aff8080c86&amp;type=3#MainMenuUSS" />
+    <ui:VisualElement name="MENU" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Time-Tail Traveler" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Title" class="header" />
+        <ui:Button text="Start" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Start" class="button" />
+        <ui:Button text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Settings" class="button" />
+        <ui:Button text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Credits" class="button" />
+        <ui:Button text="Exit" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Exit" class="button" />
+    </ui:VisualElement>
+    <ui:VisualElement name="ContainerLeft" style="flex-grow: 1; position: absolute; width: 30%; height: 100%; align-self: flex-start;">
+        <ui:VisualElement name="CreditsView" class="CreditsHidden">
+            <ui:Label tabindex="-1" text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header" />
+            <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="CreditsBack" class="closeButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="ContainerRight" style="flex-grow: 1; position: absolute; width: 30%; height: 100%; align-self: flex-end;">
+        <ui:VisualElement name="SettingsView" class="SettingsHidden">
+            <ui:Label tabindex="-1" text="Settings" parse-escape-sequences="true" display-tooltip-when-elided="true" class="header" />
+            <ui:SliderInt label="Overall Volume" high-value="100" name="OverallVol" show-input-field="true" class="Slider" />
+            <ui:SliderInt label="SFX Volume" high-value="100" name="SFXVol" show-input-field="true" class="Slider" />
+            <ui:SliderInt label="Music Volume" high-value="100" name="MusicVol" show-input-field="true" class="Slider" />
+            <ui:Button text="X" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SettingsBack" class="closeButton" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
