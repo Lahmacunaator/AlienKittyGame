@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DiffuseTransition: -2.09
+    - _DiffuseTransition: -2
     - _Speed: 3
     m_Colors: []
   m_BuildTextureStacks: []

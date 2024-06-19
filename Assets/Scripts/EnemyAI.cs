@@ -1,7 +1,4 @@
-using System;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnemyAI : MonoBehaviour
@@ -17,7 +14,10 @@ public class EnemyAI : MonoBehaviour
     public float directionCooldown = 5f;
     public float moveSpeed = 5f;
     public float detectionRange = 10f;
-    public Transform playerTransform;
+    public HealthManager playerHealth;
+    public int attackCooldown = 3;
+    private float attackCooldownTimer = 0f;
+    public bool isMonster;
     
     [Header("Animator Params")]
     public bool isWalking;
@@ -35,36 +35,44 @@ public class EnemyAI : MonoBehaviour
         HandleMovement();
         HandleDirection();
         CheckPlayer();
+        attackCooldownTimer += Time.deltaTime;
     }
 
     private void CheckPlayer()
     {
-        if (Mathf.Abs(transform.position.x - playerTransform.position.x) <=  detectionRange)
+        var distance = transform.position.x - playerHealth.transform.position.x;
+        if (Mathf.Abs(distance) <=  detectionRange && attackCooldownTimer >= attackCooldown)
         {
-            currentMove = EngageAttack();
+            currentMove = EngageAttack(distance < 0);
+            attackCooldownTimer = 0f;
         }
     }
 
-    private Moves EngageAttack()
+    public void OnAttackAnimationEnd()
+    {
+        currentMove = DecideMovement();
+    }
+
+    private Moves EngageAttack(bool isFromLeft)
     {
         StopMovement();
         LookAtPlayer();
         animator.SetBool("attacking", true);
-        
+        playerHealth.GetShot(isFromLeft);
         return Moves.Attack;
     }
 
     private void LookAtPlayer()
     {
-        if (playerTransform.position.x < transform.position.x)
+        if (playerHealth.transform.position.x < transform.position.x)
         {
             roamingDirection = -1;
-            sr.flipX = false;
+            sr.flipX = isMonster;
         }
         else
         {
             roamingDirection = 1;
-            sr.flipX = true;
+            sr.flipX = !isMonster;
         }
     }
 

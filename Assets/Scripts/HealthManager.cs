@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class HealthManager : MonoBehaviour
@@ -6,34 +7,33 @@ public class HealthManager : MonoBehaviour
     [Range(0,100)]
     public float health = 100f;
     public float heal = 30f;
-    public float damage = 10f; 
     public float healPerSecond = 1f;
     public float damagePerSecond = 1f;
     public bool isDead = false;
+    public Canvas HUD;
+    public GameObject bloodEffectL;
+    public GameObject bloodEffectR;
     
     private bool isHealing = false;
     private bool isTakingDamage = false;
     public Colorinator colorinator;
+    private bool isHudUp;
+
+    [SerializeField] private GameObject gameOverPanel;
     
     private void Update()
     {
-        if (!isDead) HandleHealth();
-    }
-
-    private void FixedUpdate()
-    {
-        if (health <= 0)
-        {
-            isDead = true;
-        }
+        CheckIfDead();
     }
     
-    private void HandleHealth()
+    private void CheckIfDead()
     {
-        if (Input.GetKeyDown(KeyCode.H)) Heal();
-        if (Input.GetKeyDown(KeyCode.J)) TakeDamage();
-        if (Input.GetKeyDown(KeyCode.K)) HealOverTime(5);
-        if (Input.GetKeyDown(KeyCode.L)) TakeDamageOverTime(5);
+        if (isDead && !isHudUp)
+        {
+            Instantiate(gameOverPanel, HUD.transform);
+            isHudUp = true;
+            Destroy(GetComponent<PlayerMover>());
+        }
     }
 
     private void Heal()
@@ -42,9 +42,10 @@ public class HealthManager : MonoBehaviour
         ApplyEffect();
     }
     
-    private void TakeDamage()
+    public void TakeDamage(float damage)
     {
-        health = health - damage < 0 ? 0 : health - damage;
+        if (health - damage <= 0) isDead = true;
+        health = isDead ? 0 : health - damage;
         ApplyEffect();
     }
     
@@ -66,6 +67,27 @@ public class HealthManager : MonoBehaviour
         }
 
         isHealing = false;
+    }
+
+    public void GetShot(bool isFromLeft = true)
+    {
+        TakeDamage(60);
+        
+        PlayBloodEffect(isFromLeft);
+    }
+    
+    private void PlayBloodEffect(bool isFromLeft)
+    {
+        if (isFromLeft)
+        {
+            var effect = Instantiate(bloodEffectL, transform);
+            Destroy(effect, 5);
+        }
+        else
+        {
+            var effect = Instantiate(bloodEffectR, transform);
+            Destroy(effect, 5);
+        }
     }
     
     private void TakeDamageOverTime(int seconds)

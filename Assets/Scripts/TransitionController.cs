@@ -7,6 +7,9 @@ public class TransitionController : MonoBehaviour
     private Material mat;
     private bool shouldDoTransition;
     private bool isReversed;
+
+    [SerializeField] private GameObject MBOBJS;
+    [SerializeField] private GameObject PWOBJS;
     
     // Start and end values for the interpolation
     private float startValue = -2.0f;
@@ -39,6 +42,10 @@ public class TransitionController : MonoBehaviour
 
     private void DoTransition()
     {
+        //Hide/Show appropriate objects
+        MBOBJS.SetActive(isReversed);
+        PWOBJS.SetActive(!isReversed);
+        
         // Increase the elapsed time
         timeElapsed += Time.deltaTime;
 

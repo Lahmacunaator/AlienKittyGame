@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
+        Time.timeScale = 1;
         SceneManager.sceneLoaded += CreateAudioManagerEvent;
         // Check if instance already exists and destroy this one if it does
         if (_instance != null && _instance != this)
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour
     
     public void CreateAudioManagerEvent(Scene arg0, LoadSceneMode arg1)
     {
+        Time.timeScale = 1;
         CreateAudioManager();
     }
 

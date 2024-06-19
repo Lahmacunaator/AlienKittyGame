@@ -9,6 +9,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private Button StartButton;
     [SerializeField] private Button ExitButton;
+    [SerializeField] private LevelSwitcharoo levelSwitcher;
     
     // Start is called before the first frame update
     void Awake()
@@ -25,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void OnStartButton()
     {
-        SceneManager.LoadSceneAsync(1);
+        levelSwitcher.GoToNextLevel();
     }
     
     private void OnExitButton()
